@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/send/send",
+    "pages/my/my"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -8,6 +10,30 @@
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTitleText": "萱乐",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#474747",
+    "selectedColor": "#d43c43",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "音乐",
+        "iconPath": "./assets/imgs/musics.png",
+        "selectedIconPath": "./assets/imgs/_musics.png"
+      },
+      {
+        "pagePath": "pages/send/send",
+        "text": "发布",
+        "iconPath": "./assets/imgs/send.png",
+        "selectedIconPath": "./assets/imgs/_send.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./assets/imgs/my.png",
+        "selectedIconPath": "./assets/imgs/_my.png"
+      }
+  ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
