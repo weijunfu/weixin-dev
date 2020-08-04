@@ -1,5 +1,11 @@
-//app.js
+const request = require('./utils/request')
+const {hexMD5} = require('./utils/md5')
+
 App({
+  globalData:{
+    baseUrl: 'https://autumnfish.cn',
+    cookie: ''
+  },
   onLaunch: function () {
     
     if (!wx.cloud) {
@@ -14,7 +20,23 @@ App({
         traceUser: true,
       })
     }
+  
+    let loginUrl = this.globalData.baseUrl+'/login/cellphone'
+    let cookie = ''
+    let password=''
+    let phone = ''
+    request(loginUrl, {
+      phone,
+      password,
+      md5_password: hexMD5(password)
+    }).then(res=>{
+      cookie = res.data.cookie
+      console.log(res)
+      this.globalData.cookie = cookie
+    }).catch(err=>{
+      console.log(err)
+    })
 
-    this.globalData = {}
+
   }
 })

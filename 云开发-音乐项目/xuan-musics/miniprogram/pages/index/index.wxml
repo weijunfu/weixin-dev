@@ -1,3 +1,15 @@
-<view>
-首页
-</view>
+<!--轮播图
+indicator-dots: 显示指示点
+autoplay： 自动切换
+circular： 衔接滑动
+indicator-color：指示点颜色
+indicator-active-color：当前指示点颜色
+interval：切换时间
+-->
+<swiper indicator-dots autoplay circular indicator-color="green" indicator-active-color="yellow" interval="3000" class="top-swiper">
+  <block wx:for="{{ banners }}" wx:key="index">
+    <swiper-item>
+      <image src="{{ item.pic }}" mode="widthFix"></image>
+    </swiper-item>
+  </block>
+</swiper>
